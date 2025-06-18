@@ -1,4 +1,4 @@
-const mongoose = require('../config/connection');
+const mongoose = require('../config/connection'); // si ahora está todo en raíz, esta ruta sigue igual
 
 const esquemaUsuario = mongoose.Schema({
     nombre: String,
