@@ -12,13 +12,23 @@ const Producto = require('./backend/models/producto.model');
 
 const Usuario = require('./backend/models/usuario.model');
 
+app.get('/api/productos', async (req, res) => {
+  try {
+    const productos = await Producto.find();
+    res.status(200).json(productos);
+  } catch (error) {
+    res.status(500).json({ mensaje: 'Error al consultar productos' });
+  }
+});
+
+
 // POST - Registrar producto
 app.post('/registrarproducto', async (req, res) => {
   try {
     const nuevoProducto = await Producto.create(req.body);
     res.status(201).json(nuevoProducto);
   } catch (error) {
-    console.error('❌ Error al registrar producto:', error);
+    console.error('Error al registrar producto:', error);
     res.status(400).json({ mensaje: 'Error al registrar producto' });
   }
 });
