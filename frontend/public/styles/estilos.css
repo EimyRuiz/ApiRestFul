@@ -1,0 +1,38 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgba(245, 245, 245, 0.9);
+    color: #333;
+}
+
+.navbar {
+    background-color: rgba(173, 216, 230, 0.7); /* azul claro traslúcido */
+}
+
+h1 {
+    color: rgba(70, 130, 180, 0.8); /* azul acero traslúcido */
+}
+
+.btn-primary {
+    background-color: rgba(173, 216, 230, 0.8);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: rgba(135, 206, 250, 0.9);
+}
+
+.table {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+footer {
+    background-color: rgba(211, 211, 211, 0.7); /* gris claro traslúcido */
+    padding: 10px;
+    text-align: center;
+}
+
+.card {
+    background-color: rgba(245, 245, 220, 0.7); /* beige traslúcido */
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

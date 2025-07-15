@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>
+
+<% if (typeof errores !== 'undefined') { %>
+    <div class="alert alert-danger">
+        <ul>
+            <% errores.forEach(error => { %>
+                <li><%= error.msg %></li>
+            <% }) %>
+        </ul>
+    </div>
+<% } %>
+
+<h1>Registrar Nuevo Producto</h1>
+
+<form action="/productos/nuevo" method="POST">
+    <div class="mb-3">
+        <label for="nombreProducto" class="form-label">Nombre del Producto</label>
+        <input type="text" class="form-control" name="nombreProducto" id="nombreProducto" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <textarea class="form-control" name="descripcion" id="descripcion" required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="precio" class="form-label">Precio</label>
+        <input type="number" class="form-control" name="precio" id="precio" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="stock" class="form-label">Stock</label>
+        <input type="number" class="form-control" name="stock" id="stock" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Crear Producto</button>
+</form>
+
+<%- include('../partials/footer') %>

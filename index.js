@@ -23,7 +23,7 @@ app.get('/api/productos', async (req, res) => {
 
 
 // POST - Registrar producto
-app.post('/registrarproducto', async (req, res) => {
+app.post('/api/productos', async (req, res) => {
   try {
     const nuevoProducto = await Producto.create(req.body);
     res.status(201).json(nuevoProducto);
@@ -34,7 +34,7 @@ app.post('/registrarproducto', async (req, res) => {
 });
 
 // GET - Consultar todos los productos
-app.get('/consultarproductos', async (req, res) => {
+app.get('/api/productos', async (req, res) => {
   try {
     const productos = await Producto.find();
     res.status(200).json(productos);
@@ -44,7 +44,7 @@ app.get('/consultarproductos', async (req, res) => {
 });
 
 // GET - Consultar producto por referencia
-app.get('/consultarproducto/:referencia', async (req, res) => {
+app.get('/api/productos', async (req, res) => {
   try {
     const producto = await Producto.findOne({ referencia: req.params.referencia });
     if (!producto) return res.status(404).json({ mensaje: 'Producto no encontrado' });
@@ -55,7 +55,7 @@ app.get('/consultarproducto/:referencia', async (req, res) => {
 });
 
 // PUT - Actualizar producto por referencia
-app.put('/actualizarproducto/:referencia', async (req, res) => {
+app.put('/api/productos', async (req, res) => {
   try {
     const productoActualizado = await Producto.findOneAndUpdate(
       { referencia: req.params.referencia },
@@ -69,7 +69,7 @@ app.put('/actualizarproducto/:referencia', async (req, res) => {
 });
 
 // DELETE - Eliminar producto por referencia
-app.delete('/eliminarproducto/:referencia', async (req, res) => {
+app.delete('/api/productos', async (req, res) => {
   try {
     const resultado = await Producto.deleteOne({ referencia: req.params.referencia });
     res.status(200).json({ mensaje: 'Producto eliminado correctamente' });
@@ -80,7 +80,7 @@ app.delete('/eliminarproducto/:referencia', async (req, res) => {
 
 
 
-app.get('/consultarusuario/:correo', async (req, res) => {
+app.get('/api/productos', async (req, res) => {
   try {
     const usuario = await Usuario.findOne({ correo: req.params.correo });
     if (!usuario) {
@@ -95,12 +95,12 @@ app.get('/consultarusuario/:correo', async (req, res) => {
 
 
 
-app.post('/registrarusuario', async (req, res) => {
+app.post('/api/productos', async (req, res) => {
   try {
     const nuevoUsuario = await Usuario.create(req.body);
     res.status(201).json(nuevoUsuario);
   } catch (err) {
-    console.error('❌ Error al registrar usuario:', err);
+    console.error('Error al registrar usuario:', err);
     res.status(400).json({ mensaje: 'Error al registrar usuario' });
   }
 });

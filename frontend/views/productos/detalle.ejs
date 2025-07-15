@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<h1>Detalle del Producto</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h5 class="card-title"><%= producto.nombreProducto %></h5>
+        <p class="card-text"><strong>Descripción:</strong> <%= producto.descripcion %></p>
+        <p class="card-text"><strong>Precio:</strong> $<%= producto.precio %></p>
+        <p class="card-text"><strong>Stock:</strong> <%= producto.stock %></p>
+    </div>
+</div>
+
+<a href="/productos" class="btn btn-secondary">Volver a la lista</a>
+
+<%- include('../partials/footer') %>
